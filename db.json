@@ -1,0 +1,56 @@
+{
+  "venues": [
+    {
+      "id": "4fee28bd-30ad-4413-a25c-a9c02dc2db2b",
+      "name": "Dakota Square Garden",
+      "location": "24 428th Avenue, Freeman, South Dakota, 53029, United States",
+      "description": "Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra. Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra. Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.",
+      "shortDescription": "Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.",
+      "capacity": 860,
+      "imagePath": "/images/venue-01.jpg",
+      "pricePerDay": 2860
+    }, {
+      "id": "977d2aaf-0f95-40ed-98d5-81bed4834f95",
+      "name": "Radio City Musical Hall",
+      "location": "5 State Road S-42-8383, Spartanburg, South Carolina, 29303, United States",
+      "description": "Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra. Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra. Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.",
+      "shortDescription": "Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.",
+      "capacity": 1100,
+      "imagePath": "/images/venue-02.jpg",
+      "pricePerDay": 4750
+    }, {
+      "id": "2e2fbc1a-d442-490c-a589-dc2f4ce0e2fd",
+      "name": "Royce Hall",
+      "location": "23 US Highway 13, New Castle, Delaware, 19320, United States",
+      "description": "Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra. Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra. Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.",
+      "shortDescription": "Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.",
+      "capacity": 1250,
+      "imagePath": "/images/venue-03.jpg",
+      "pricePerDay": 5860
+    }
+  ],
+  "events": [
+    {
+      "id": "c141f3da-53c4-44c1-9363-b1f3f3e4bb91",
+      "name": "Tiger Land Festival",
+      "description": "Lorem ipsum dolor sit amet, consectetur do adipiscing eliterirt sed eiusmod",
+      "venueId": "4fee28bd-30ad-4413-a25c-a9c02dc2db2b",
+      "imagePath": "/images/event-page-01.jpg"
+
+    }, {
+      "id": "96c2750d-3693-4b99-93e6-bf784abc20b9",
+      "name": "Super Rock Festival",
+      "description": "Lorem ipsum dolor sit amet, consectetur do adipiscing eliterirt sed eiusmod",
+      "venueId": "977d2aaf-0f95-40ed-98d5-81bed4834f95",
+      "imagePath": "/images/event-page-02.jpg"
+
+    }, {
+      "id": "97806dcf-da27-47f5-9eb8-9274c9825a51",
+      "name": "Rocky Hill Festival",
+      "description": "Lorem ipsum dolor sit amet, consectetur do adipiscing eliterirt sed eiusmod",
+      "venueId": "2e2fbc1a-d442-490c-a589-dc2f4ce0e2fd",
+      "imagePath": "/images/event-page-03.jpg"
+
+    }
+  ]
+}
