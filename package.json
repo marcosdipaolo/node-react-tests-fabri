@@ -2,7 +2,7 @@
   "name": "tests",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "dependencies": {
     "axios": "^0.27.2",
     "ejs": "^3.1.8",
@@ -11,10 +11,18 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.16"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/node": "^7.18.5",
+    "@babel/preset-env": "^7.18.2"
+  },
   "scripts": {
-    "dev": "nodemon index.js",
-    "db": "json-server --watch db.json"
+    "dev": "nodemon --exec node_modules/.bin/babel-node src/index.js",
+    "prod": "yarn clean && yarn build && node dist/index.js",
+    "db": "json-server --watch db.json",
+    "build": "babel src --out-dir dist",
+    "clean": "rm -rf dist"
   },
   "keywords": [],
   "author": "",
