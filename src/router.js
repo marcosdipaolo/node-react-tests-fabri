@@ -1,5 +1,13 @@
 import { Router } from 'express';
-import { home, about, rentVenue, tickets, ticketDetails, eventDetails, showEvents } from "./controllers/pageController";
+import {
+    home,
+    about,
+    rentVenue,
+    tickets,
+    ticketDetails,
+    eventDetails,
+    showEvents
+} from "./controllers/pageController";
 
 const router = Router();
 

@@ -26,7 +26,7 @@
       "shortDescription": "Lorem ipsum dolor sit amet, consectetur vinzi iscing elit, sed doers kontra.",
       "capacity": 1250,
       "imagePath": "/images/venue-03.jpg",
-      "pricePerDay": 5860
+      "pricePerDay": 5870
     }
   ],
   "events": [
@@ -50,6 +50,13 @@
       "description": "Lorem ipsum dolor sit amet, consectetur do adipiscing eliterirt sed eiusmod",
       "venueId": "2e2fbc1a-d442-490c-a589-dc2f4ce0e2fd",
       "imagePath": "/images/event-page-03.jpg"
+
+    }, {
+      "id": "d20d3b78-e8f3-407e-b7ab-b11432fa799a",
+      "name": "Hip Hop Special",
+      "description": "Lorem ipsum dolor sit amet, consectetur do adipiscing eliterirt sed eiusmod",
+      "venueId": "4fee28bd-30ad-4413-a25c-a9c02dc2db2b",
+      "imagePath": "/images/event-page-04.jpg"
 
     }
   ]

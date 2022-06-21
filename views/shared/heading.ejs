@@ -3,9 +3,14 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h2>Radio City Musical Hall</h2>
-        <span>September 24-28, 2021 in Rio de Janeiro</span>
+        <h2><%= heading %></h2>
+        <span><%= subHeading %></span>
       </div>
     </div>
+    <% if (headingKey === "error") { %>
+    <br />
+    <br />
+      <%- include("button-home") %>
+    <% } %>
   </div>
 </div>

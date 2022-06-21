@@ -1,5 +1,6 @@
-const config = require("../../config");
-const axios = require("axios");
+import config from "../../config";
+import axios from "axios";
+import headingResolver from "../utils/headingResolver";
 
 export const home = async (req, res) => {
   const headingKey = "home";
@@ -9,29 +10,30 @@ export const home = async (req, res) => {
   } catch(e) {
     response = {data: []};
   }
-  res.render("home", { headingKey, venues: response.data });
+  res.render("home", { ...headingResolver(headingKey), venues: response.data });
 }
 
-export const about = (req, res) => {
-  res.render("about", { headingKey: "about" });
+export const about = async (req, res) => {
+  res.render("about", headingResolver("about"));
 }
 
 export const tickets = (req, res) => {
-  res.render("tickets", { headingKey: "tickets" });
+  res.render("tickets", headingResolver("tickets"));
 }
 
 export const rentVenue = (req, res) => {
-  res.render("rent-venue", { headingKey: "rent-venue" });
+  res.render("rent-venue", headingResolver("rent-venue"));
 }
 
 export const showEvents = (req, res) => {
-  res.render("shows-events", { headingKey: "shows-events" });
+  console.error("__ERROR__", headingResolver("shows-events"))
+  res.render("shows-events", headingResolver("shows-events"));
 }
 
 export const ticketDetails = (req, res) => {
-  res.render("tickets/details", { headingKey: "tickets" });
+  res.render("tickets/details", headingResolver("tickets"));
 }
 
 export const eventDetails = (req, res) => {
-  res.render("shows-events/details", { headingKey: "shows-events" });
+  res.render("shows-events/details", headingResolver("shows-events"));
 }

@@ -1,0 +1,25 @@
+/*
+---------------------------------------------
+Error
+---------------------------------------------
+
+*/
+.page-heading-error {
+    background-image: url(../images/shows_events_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 110px 0px 410px 0px;
+}
+
+.page-heading-error h2 {
+    font-size: 50px;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.page-heading-error span {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 300;
+}
