@@ -16,13 +16,19 @@ app.get('/about', (req, res) => {
     res.render('./about/index', { root: __dirname });
 });
 app.get('/rent-venue', (req, res) => {
-    res.render('./about/index', { root: __dirname });
+    res.render('./rent_venues/index', { root: __dirname });
 });
 app.get('/shows-events', (req, res) => {
-    res.render('./about/index', { root: __dirname });
+    res.render('./show_events/index', { root: __dirname });
+});
+app.get('/event-details', (req, res) => {
+    res.render('./event_details/index', { root: __dirname });
+});
+app.get('/ticket-details', (req, res) => {
+    res.render('./tickets/details', { root: __dirname });
 });
 app.get('/tickets', (req, res) => {
-    res.render('./about/index', { root: __dirname });
+    res.render('./tickets/index', { root: __dirname });
 });
 
 //listen
