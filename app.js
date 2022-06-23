@@ -11,6 +11,9 @@ app.use(express.static('public'));
 //Routes
 const routes = require('./src/routes/homeRoutes');
 app.use(routes);
+app.use((req, res) => {
+    res.status(404).render('./errors/index', { title: 'Error' });
+});
 
 //listen
 app.listen(3000, () => {
