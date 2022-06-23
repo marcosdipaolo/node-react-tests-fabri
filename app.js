@@ -1,35 +1,16 @@
+//starting
 const express = require('express');
-const morgan = require('morgan');
-
 const app = express();
 app.set('view engine', 'ejs');
 
+//config
+const morgan = require('morgan');
 app.use(morgan('dev'));
 app.use(express.static('public'));
 
-
 //Routes
-app.get('/', (req, res) => {
-    res.render('./home/index', { root: __dirname });
-});
-app.get('/about', (req, res) => {
-    res.render('./about/index', { root: __dirname });
-});
-app.get('/rent-venue', (req, res) => {
-    res.render('./rent_venues/index', { root: __dirname });
-});
-app.get('/shows-events', (req, res) => {
-    res.render('./show_events/index', { root: __dirname });
-});
-app.get('/event-details', (req, res) => {
-    res.render('./event_details/index', { root: __dirname });
-});
-app.get('/ticket-details', (req, res) => {
-    res.render('./tickets/details', { root: __dirname });
-});
-app.get('/tickets', (req, res) => {
-    res.render('./tickets/index', { root: __dirname });
-});
+const routes = require('./src/routes/homeRoutes');
+app.use(routes);
 
 //listen
 app.listen(3000, () => {
