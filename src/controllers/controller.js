@@ -53,8 +53,27 @@ controller.show_events = async (req, res) => {
         });
     }
 };
-controller.event_details = (req, res) => {
-    res.render('./event_details/index', { root: __dirname, title: 'Details' });
+controller.event_details = async (req, res) => {
+    try {
+        const response = await fetch(url+'/details.json');
+        await response.json()
+            .then((imp)=>{
+                let evs = [];
+                for(const key in imp){
+                    evs.push(imp[key])
+                }
+                res.render('./event_details/index', {
+                    root: __dirname,
+                    title: 'Details',
+                    details: evs,
+                })}
+            );
+    } catch (e) {
+        res.status(404).render('./errors/index', {
+            title: 'Error',
+            desc: e.message + '!',
+        });
+    }
 };
 //tickets
 controller.tickets = (req, res) => {
