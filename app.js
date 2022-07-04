@@ -1,18 +1,21 @@
 //starting
-const express = require('express');
+import express from 'express';
 const app = express();
 app.set('view engine', 'ejs');
 
 //config
-const morgan = require('morgan');
+import morgan from 'morgan';
 app.use(morgan('dev'));
 app.use(express.static('public'));
 
 //Routes
-const routes = require('./src/routes/homeRoutes');
+import routes from './src/routes/homeRoutes.js';
 app.use(routes);
 app.use((req, res) => {
-    res.status(404).render('./errors/index', { title: 'Error', desc: 'Page not found!' });
+    res.status(404).render('./errors/index', {
+        title: 'Error',
+        desc: 'Page not found!',
+    });
 });
 
 //listen

@@ -1,25 +1,24 @@
-const fetch = require('node-fetch');
-const controller = {};
+import fetch from 'node-fetch';
+import '../../loadEnv.js';
 
-const url = 'https://react-http-467cc-default-rtdb.firebaseio.com';
-controller.index = (req, res) => {
-    res.render('./home/index', { root: __dirname, title: 'Home' });
+const url = process.env.DB_URL;
+
+export const index = (req, res) => {
+    res.render('./home/index', { title: 'Home' });
 };
-controller.about = async (req, res) => {
+export const about = async (req, res) => {
     try {
-        const response = await fetch(url+'/events.json');
-        await response.json()
-            .then((imp)=>{
-                let evs = [];
-                for(const key in imp){
-                    evs.push(imp[key])
-                }
-                res.render('./about/index', {
-                    root: __dirname,
-                    title: 'About',
-                    events: evs,
-                })}
-            );
+        const response = await fetch(url + '/events.json');
+        response.json().then((imp) => {
+            let evs = [];
+            for (const key in imp) {
+                evs.push(imp[key]);
+            }
+            res.render('./about/index', {
+                title: 'About',
+                events: evs,
+            });
+        });
     } catch (e) {
         res.status(404).render('./errors/index', {
             title: 'Error',
@@ -27,25 +26,24 @@ controller.about = async (req, res) => {
         });
     }
 };
-controller.rent_venue = (req, res) => {
-    res.render('./rent_venues/index', { root: __dirname, title: 'Rent Venue' });
+export const rent_venue = (req, res) => {
+    res.render('./rent_venues/index', {
+        title: 'Rent Venue',
+    });
 };
-//events
-controller.show_events = async (req, res) => {
+export const show_events = async (req, res) => {
     try {
-        const response = await fetch(url+'/shows.json');
-        await response.json()
-            .then((imp)=>{
-                let evs = [];
-                for(const key in imp){
-                    evs.push(imp[key])
-                }
-                res.render('./show_events/index', {
-                    root: __dirname,
-                    title: 'Events',
-                    shows: evs,
-                })}
-            );
+        const response = await fetch(url + '/shows.json');
+        response.json().then((imp) => {
+            let evs = [];
+            for (const key in imp) {
+                evs.push(imp[key]);
+            }
+            res.render('./show_events/index', {
+                title: 'Events',
+                shows: evs,
+            });
+        });
     } catch (e) {
         res.status(404).render('./errors/index', {
             title: 'Error',
@@ -53,21 +51,19 @@ controller.show_events = async (req, res) => {
         });
     }
 };
-controller.event_details = async (req, res) => {
+export const event_details = async (req, res) => {
     try {
-        const response = await fetch(url+'/details.json');
-        await response.json()
-            .then((imp)=>{
-                let evs = [];
-                for(const key in imp){
-                    evs.push(imp[key])
-                }
-                res.render('./event_details/index', {
-                    root: __dirname,
-                    title: 'Details',
-                    details: evs,
-                })}
-            );
+        const response = await fetch(url + '/details.json');
+        response.json().then((imp) => {
+            let evs = [];
+            for (const key in imp) {
+                evs.push(imp[key]);
+            }
+            res.render('./event_details/index', {
+                title: 'Details',
+                details: evs,
+            });
+        });
     } catch (e) {
         res.status(404).render('./errors/index', {
             title: 'Error',
@@ -75,11 +71,9 @@ controller.event_details = async (req, res) => {
         });
     }
 };
-//tickets
-controller.tickets = (req, res) => {
-    res.render('./tickets/index', { root: __dirname, title: 'Tickets' });
+export const tickets = (req, res) => {
+    res.render('./tickets/index', { title: 'Tickets' });
 };
-controller.ticket_details = (req, res) => {
-    res.render('./tickets/details', { root: __dirname, title: 'Details' });
+export const ticket_details = (req, res) => {
+    res.render('./tickets/details', { title: 'Details' });
 };
-module.exports = controller;
