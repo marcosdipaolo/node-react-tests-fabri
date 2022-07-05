@@ -8,12 +8,15 @@ export const index = (req, res) => {
 };
 export const about = async (req, res) => {
     try {
-        const response = await fetch(url + '/events.json');
+        let ev_url = url.concat('/events.json');
+        console.log(ev_url);
+        const response = await fetch(ev_url);
         response.json().then((imp) => {
             let evs = [];
             for (const key in imp) {
                 evs.push(imp[key]);
             }
+            console.log(evs);
             res.render('./about/index', {
                 title: 'About',
                 events: evs,

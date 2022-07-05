@@ -19,6 +19,7 @@ app.use((req, res) => {
 });
 
 //listen
-app.listen(3000, () => {
+import './loadEnv.js'
+app.listen(process.env.PORT, () => {
     console.log('app running at port 3000');
 });
