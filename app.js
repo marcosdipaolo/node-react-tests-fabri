@@ -1,15 +1,19 @@
-//starting
+import './loadEnv.js'
 import express from 'express';
+import morgan from 'morgan';
+import routes from './src/routes/homeRoutes.js';
+import cors from "cors"
+
 const app = express();
 app.set('view engine', 'ejs');
 
 //config
-import morgan from 'morgan';
 app.use(morgan('dev'));
+app.use(express.json());
 app.use(express.static('public'));
+app.use(cors());
 
 //Routes
-import routes from './src/routes/homeRoutes.js';
 app.use(routes);
 app.use((req, res) => {
     res.status(404).render('./errors/index', {
@@ -17,9 +21,8 @@ app.use((req, res) => {
         desc: 'Page not found!',
     });
 });
-
+const PORT = process.env.PORT;
 //listen
-import './loadEnv.js'
-app.listen(process.env.PORT, () => {
-    console.log('app running at port 3000');
+app.listen(PORT, () => {
+    console.log(`app running at port ${PORT}`);
 });
