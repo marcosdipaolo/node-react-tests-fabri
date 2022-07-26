@@ -8,20 +8,9 @@ export const index = (req, res) => {
 };
 export const about = async (req, res) => {
     try {
-        let ev_url = url.concat('/events.json');
-        console.log(ev_url);
-        const response = await fetch(ev_url);
-        response.json().then((imp) => {
-            let evs = [];
-            for (const key in imp) {
-                evs.push(imp[key]);
-            }
-            console.log(evs);
-            res.render('./about/index', {
-                title: 'About',
-                events: evs,
-            });
-        });
+        const response = await fetch(url + '/events.json');
+        const data = Object.values(await response.json());
+        res.json(data);
     } catch (e) {
         res.status(404).render('./errors/index', {
             title: 'Error',
@@ -37,16 +26,8 @@ export const rent_venue = (req, res) => {
 export const show_events = async (req, res) => {
     try {
         const response = await fetch(url + '/shows.json');
-        response.json().then((imp) => {
-            let evs = [];
-            for (const key in imp) {
-                evs.push(imp[key]);
-            }
-            res.render('./show_events/index', {
-                title: 'Events',
-                shows: evs,
-            });
-        });
+        const data = Object.values(await response.json())
+        res.json(data);
     } catch (e) {
         res.status(404).render('./errors/index', {
             title: 'Error',

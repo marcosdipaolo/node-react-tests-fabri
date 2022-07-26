@@ -1,15 +1,15 @@
-//starting
 import express from 'express';
+import morgan from 'morgan';
+import routes from './src/routes/homeRoutes.js';
+//starting
 const app = express();
 app.set('view engine', 'ejs');
 
 //config
-import morgan from 'morgan';
 app.use(morgan('dev'));
 app.use(express.static('public'));
 
 //Routes
-import routes from './src/routes/homeRoutes.js';
 app.use(routes);
 app.use((req, res) => {
     res.status(404).render('./errors/index', {
