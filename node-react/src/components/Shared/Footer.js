@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -22,19 +23,19 @@ const Footer = () => {
                                 <h4>Useful Links</h4>
                                 <ul>
                                     <li>
-                                        <a href='#'>Info</a>
+                                        <Link to={'#'}>Info</Link>
                                     </li>
                                     <li>
-                                        <a href='#'>Venues</a>
+                                        <Link to={'#'}>Venues</Link>
                                     </li>
                                     <li>
-                                        <a href='#'>Guides</a>
+                                        <Link to={'#'}>Guides</Link>
                                     </li>
                                     <li>
-                                        <a href='#'>Videos</a>
+                                        <Link to={'#'}>Videos</Link>
                                     </li>
                                     <li>
-                                        <a href='#'>Outreach</a>
+                                        <Link to={'#'}>Outreach</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -60,13 +61,13 @@ const Footer = () => {
                                             Copyright 2021 ArtXibition Company
                                             <br />
                                             Design:
-                                            <a
+                                            <Link
                                                 rel='nofollow'
-                                                href='https://www.tooplate.com'
+                                                to={'https://www.tooplate.com'}
                                                 target='_parent'
                                             >
                                                 Tooplate
-                                            </a>
+                                            </Link>
                                         </p>
                                     </div>
                                 </div>
@@ -77,38 +78,43 @@ const Footer = () => {
                                 <div className='row'>
                                     <div className='col-lg-3'>
                                         <div className='logo'>
-                                            <span>
-                                                Art<em>Fabric</em>
-                                            </span>
+                                            <Link to={'/'}>
+                                                <span>
+                                                    <em>Art</em>Fabric
+                                                </span>
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className='col-lg-6'>
                                         <div className='menu'>
                                             <ul>
                                                 <li>
-                                                    <a href='/' className='active'>
+                                                    <Link
+                                                        to={'/'}
+                                                        className='active'
+                                                    >
                                                         Home
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href='/about'>
+                                                    <Link to={'/about'}>
                                                         About Us
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href='/rent-venue'>
+                                                    <Link to={'/rent-venue'}>
                                                         Rent Venue
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href='/shows-events'>
+                                                    <Link to={'/shows-events'}>
                                                         Shows & Events
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href='/tickets'>
+                                                    <Link to={'/tickets'}>
                                                         Tickets
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -117,24 +123,24 @@ const Footer = () => {
                                         <div className='social-links'>
                                             <ul>
                                                 <li>
-                                                    <a href='#'>
+                                                    <Link to={'#'}>
                                                         <i className='fa fa-twitter'></i>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href='#'>
+                                                    <Link to={'#'}>
                                                         <i className='fa fa-facebook'></i>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href='#'>
+                                                    <Link to={'#'}>
                                                         <i className='fa fa-behance'></i>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                                 <li>
-                                                    <a href='#'>
+                                                    <Link to={'#'}>
                                                         <i className='fa fa-instagram'></i>
-                                                    </a>
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -145,7 +151,6 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            
         </React.Fragment>
     );
 };
